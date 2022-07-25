@@ -1,0 +1,84 @@
+.form {
+  max-width: 736px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: -28px;
+  margin-bottom: 64px;
+}
+
+.input,
+.btnSubmit {
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--gray-500);
+  color: var(--gray-300);
+}
+
+.input:focus {
+  color: var(--gray-100);
+}
+
+.btnSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+  font-weight: 700;
+  font-size: 14px;
+
+  transition: background-color 200ms ease-in-out;
+}
+
+.btnSubmit:not(:disabled):hover,
+.btnSubmit:not(:disabled):focus-visible {
+  cursor: pointer;
+  background-color: var(--blue);
+}
+
+.btnSubmit[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.TasksList {
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+.NoTasksCreated {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--gray-300);
+}
+
+.NoTasksCreated h4 {
+  margin-top: 16px;
+}
+
+@media (max-width: 760px) {
+  .Container {
+    padding: 0 10px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    text-align: center;
+  }
+
+  .btnSubmit {
+    width: 100%;
+  }
+}
