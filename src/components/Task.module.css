@@ -1,0 +1,107 @@
+.Task {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20px auto 24px;
+  justify-items: start;
+  gap: 12px;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.Task:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.RoundedCheckbox {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+
+.RoundedCheckbox label {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  left: 0;
+  top: 0;
+
+  transition: all 200ms ease-in-out;
+}
+
+.RoundedCheckbox label:after {
+  content: "";
+  border: 2px solid var(--gray-100);
+  border-top: none;
+  border-right: none;
+  height: 6px;
+  left: 3px;
+  opacity: 0;
+  position: absolute;
+  top: 4px;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.RoundedCheckbox label:hover {
+  border-color: var(--blue-dark);
+}
+
+.RoundedCheckbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.RoundedCheckbox input[type="checkbox"]:focus-visible + label {
+  border-color: var(--blue-dark);
+}
+
+.RoundedCheckbox input[type="checkbox"]:checked + label {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+.RoundedCheckbox input[type="checkbox"]:checked + label:hover {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+.RoundedCheckbox input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.TaskText,
+.TaskTextDone {
+  font-size: 0.875rem;
+  width: 100%;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.TaskTextDone {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.DeleteBtn {
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 2px;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 4px;
+
+  transition: all 200ms ease-in-out;
+}
+
+.DeleteBtn:hover,
+.DeleteBtn:focus-visible {
+  color: var(--danger);
+  background-color: var(--gray-400);
+}
