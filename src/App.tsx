@@ -7,7 +7,7 @@ interface Task {
   isDone: boolean;
 }
 
-const localStorageData = JSON.parse(localStorage.getItem("data") || "[]");
+const localStorageData = JSON.parse(localStorage.getItem("@to-do:data-1.0.0") || "[]");
 
 const tasks: Array<Task> = localStorageData;
 

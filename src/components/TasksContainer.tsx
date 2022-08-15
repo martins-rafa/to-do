@@ -24,7 +24,7 @@ export function TasksContainer({ tasks }: TasksProps) {
   const [newTaskContent, setNewTaskContent] = useState("");
   const [tasksDone, setTasksDone] = useState(tasksDoneFilteredArray.length);
 
-  localStorage.setItem("data", JSON.stringify(tasksList));
+  localStorage.setItem("@to-do:data-1.0.0", JSON.stringify(tasksList));
 
   const isNewTaskContentEmpty = newTaskContent.trim().length === 0;
 
